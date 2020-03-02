@@ -1,0 +1,7 @@
+{
+  "name": "stockgram",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
