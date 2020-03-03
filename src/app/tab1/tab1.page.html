@@ -13,5 +13,27 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div class="ion-padding">
+    <p>Today's Announcements</p>
+    <p *ngIf="!error;else errorContent">
+
+      <ion-card *ngFor="let alert of data">
+        <ion-item>
+          <ion-icon name="pin" slot="start"></ion-icon>
+          <ion-label>{{ alert.NEWSSUB }} -
+            {{alert.News_submission_dt}}
+          </ion-label>
+          <ion-button fill="outline" slot="end" href={{alert.NSURL}}>View</ion-button>
+        </ion-item>
+
+        <ion-card-content>
+          {{alert.HEADLINE}}
+        </ion-card-content>
+      </ion-card>
+
+    </p>
+    <ng-template #errorContent><p><span style="color: red;">{{error}}</span></p></ng-template>
+  </div>
+ <!-- <app-explore-container name="Tab 1 page"></app-explore-container>-->
 </ion-content>
+
